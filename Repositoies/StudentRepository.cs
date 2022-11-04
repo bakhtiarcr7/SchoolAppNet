@@ -57,13 +57,18 @@ namespace School_Management_System.Repositoies
 
                 //return query;
                 //var studentMarks =SchoolAppContext.Students.Include(u => u.Marks).ToList();
+                count--;
                 var highm = from p in SchoolAppContext.Marks
                             group p by p.StudentId into sgroup
-                            select new { marks=}
-                            
-                foreach (var obj in highm)
+                            let mark = sgroup.OrderByDescending(e => e.Score).Skip(count).FirstOrDefault().Score
+                            let second = sgroup.Where(e => e.Score == mark)
+                            from p in second
+                            select p;
+                //Console.WriteLine(highm);
+
+                foreach (var obj in highm.ToList())
                 {
-                    Console.WriteLine($"Student ID= {obj.Id}");
+                    Console.WriteLine($"Student ID= {obj.StudentId} and {count} Highest Marks = {obj.Score}");
                 }
 
                 return (IEnumerable<Mark>)highm;

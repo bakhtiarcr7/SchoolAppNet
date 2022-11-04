@@ -77,31 +77,40 @@ namespace School_Management_System
                 
                 Student st = new Student
                 {
-                    Firstname = "Bakhtiar",
-                    LastName = "Ali",
+                    Firstname = "Hussain",
+                    LastName = "Brohi",
                     Group = new Group
                     {
-                        Name = "V"
+                        Name = "IV"
                     },
                     Marks = new List<Mark>
                         {
                             new Mark{
-                                        Score=10,
+                                        Score=100,
                                         Subject=new Subject
                                         {
-                                            Title="Physics"
+                                            Title="Psychology"
+
+                                        }
+                            },
+                             new Mark{
+                                        Score=70,
+                                        Subject=new Subject
+                                        {
+                                            Title="Maths"
 
                                         }
                             },
                             new Mark{
-                                        Score=20,
+                                        Score=30,
                                         Subject= new Subject
-                                        { Title="Chemistry"} }
-                            }
+                                        { Title="English"} }
+                            },
+                            
                 };
                 //unitOfWork.Students.Add(st);
 
-                unitOfWork.Students.GetStudentNHighestMarks(1);
+                unitOfWork.Students.GetStudentNHighestMarks(3);
                 unitOfWork.Complete();
 
             }
