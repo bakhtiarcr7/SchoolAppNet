@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using School_Management_System.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Remoting.Contexts;
+using System.Data.Entity.Core.Objects;
+using System.Security.Cryptography;
 
 namespace School_Management_System.Repositoies
 {
@@ -55,17 +57,14 @@ namespace School_Management_System.Repositoies
 
                 //return query;
                 //var studentMarks =SchoolAppContext.Students.Include(u => u.Marks).ToList();
-                var highm = SchoolAppContext.Students.OrderByDescending(b => b.Firstname)
-                                    .Select(b => new Student
-                                    {
-                                        Id = b.Id,
-                                        Firstname = b.Firstname,
-                                        Marks = b.Marks.Select(st => new Mark
-                                        {
-                                            StudentId = st.Id,
-                                            Score = st.Score,
-                                        }).ToList()
-                                    }).ToList();
+                var highm = from p in SchoolAppContext.Marks
+                            group p by p.StudentId into sgroup
+                            select new { marks=}
+                            
+                foreach (var obj in highm)
+                {
+                    Console.WriteLine($"Student ID= {obj.Id}");
+                }
 
                 return (IEnumerable<Mark>)highm;
 
