@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202211031119106_createDb.designer.cs">
       <DependentUpon>202211031119106_createDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositoies\GroupRepository.cs" />
+    <Compile Include="Repositoies\IModelRepositories\IGroupRepository.cs" />
+    <Compile Include="Repositoies\IModelRepositories\IMarkRepository.cs" />
+    <Compile Include="Repositoies\IModelRepositories\ISubjectRepository.cs" />
+    <Compile Include="Repositoies\IModelRepositories\ITeacherRepository.cs" />
+    <Compile Include="Repositoies\MarkRepository.cs" />
+    <Compile Include="Repositoies\SubjectRepository.cs" />
+    <Compile Include="Repositoies\TeacherRepository.cs" />
     <Compile Include="UnitOfWorkk\IUnitOfWork.cs" />
     <Compile Include="UnitOfWorkk\UnitOfWork.cs" />
     <Compile Include="Migrations\Configuration.cs" />

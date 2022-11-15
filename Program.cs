@@ -109,8 +109,13 @@ namespace School_Management_System
                             
                 };
                 //unitOfWork.Students.Add(st);
-
+                Console.WriteLine("Get Student By Id =2 : "+unitOfWork.Students.Get(2).Firstname);
                 unitOfWork.Students.GetStudentNHighestMarks(3);
+
+                unitOfWork.Subjects.GetSubjectCount();
+                unitOfWork.Subjects.isSubAvailable("Maths");
+                unitOfWork.Subjects.isSubAvailable("Political Science");
+
                 unitOfWork.Complete();
 
             }
