@@ -11,7 +11,7 @@ namespace School_Management_System.IUnitOfWorkk
     internal interface IUnitOfWork : IDisposable
     {
         IStudentRepository Students { get; }
-        ITeacherRepository Teachers { get; }
+        ITeacherRepository Teachers { get; }    
         ISubjectRepository Subjects { get; }
         IGroupRepository Groups { get; }
         IMarkRepository Marks { get; }
